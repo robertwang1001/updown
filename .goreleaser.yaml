@@ -16,11 +16,11 @@ archives:
         formats: [zip]
 
 brews:
-  - url_template: 'https://github.com/GloryWong/updown/releases/download/{{ .Tag }}/{{ .ArtifactName }}'
+  - url_template: 'https://github.com/robertwang1001/updown/releases/download/{{ .Tag }}/{{ .ArtifactName }}'
     directory: Formula
     # Caveats for the user of your binary.
     caveats: updown --help
-    homepage: 'https://github.com/GloryWong/updown'
+    homepage: 'https://github.com/robertwang1001/updown'
     description: A CLI tool to upload or download files to or from GitHub Gist
     license: MIT
     service: |
@@ -36,6 +36,6 @@ brews:
       (Pathname.new(Dir.home)/".updown/logs").mkpath
     # Repository to push the generated files to.
     repository:
-      owner: GloryWong
+      owner: robertwang1001
       name: homebrew-tap
       token: '{{ .Env.HOMEBREW_GITHUB_TOKEN }}'

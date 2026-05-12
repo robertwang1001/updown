@@ -11,7 +11,7 @@ A CLI to upload or download files to or from GitHub Gist. Personal use only!
 ### Tapping and Installing
 
 ```bash
-brew tap GloryWong/homebrew-tap
+brew tap robertwang1001/homebrew-tap
 brew install updown
 ```
 
@@ -41,7 +41,7 @@ brew upgrade updown
   Ensure that you have correctly added the custom tap using:
 
   ```bash
-  brew tap GloryWong/homebrew-tap
+  brew tap robertwang1001/homebrew-tap
   ```
 
   You may need to update the formula in order to install the latest package
@@ -54,7 +54,7 @@ brew upgrade updown
 
 Contributions are welcome! If you have ideas, bug fixes, or improvements, please
 Open an issue or submit a pull request on the
-[GitHub repository](https://github.com/GloryWong/updown).
+[GitHub repository](https://github.com/robertwang1001/updown).
 
 ## License
 
