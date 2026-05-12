@@ -41,7 +41,7 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v2
         with:
-          deno-version: 2.7.13
+          deno-version: 2.7.14
 
       - name: Install dependencies
         run: deno install --no-check --frozen

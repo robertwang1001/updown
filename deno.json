@@ -5,7 +5,7 @@
     "compile": "deno compile --allow-all --no-check --include version.txt --output dist/updown cli.ts"
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@1.0.19"
   },
   "exclude": ["CHANGELOG.md"],
   "fmt": {
