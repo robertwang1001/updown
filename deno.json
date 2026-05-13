@@ -7,15 +7,22 @@
   "imports": {
     "@std/assert": "jsr:@std/assert@1.0.19"
   },
-  "exclude": ["CHANGELOG.md"],
+  "exclude": [
+    "CHANGELOG.md"
+  ],
   "fmt": {
     "singleQuote": true,
     "semiColons": false
   },
   "lint": {
     "rules": {
-      "exclude": ["no-explicit-any"]
+      "exclude": [
+        "no-explicit-any"
+      ]
     }
   },
-  "nodeModulesDir": "auto"
+  "nodeModulesDir": "auto",
+  "allowScripts": [
+    "npm:simple-git-hooks@2.13.1"
+  ]
 }

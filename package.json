@@ -17,10 +17,16 @@
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "deno run -A npm:lint-staged && deno task test",
-    "commit-msg": "deno run -A npm:commitlint --edit ${1}"
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx --no -- commitlint --edit ${1}"
   },
   "lint-staged": {
-    "*": "deno lint && deno fmt"
+    "*.{ts,tsx,js,jsx}": [
+      "deno fmt",
+      "deno lint"
+    ],
+    "*.{json,md,css,html,yml,yaml}": [
+      "deno fmt"
+    ]
   }
 }
