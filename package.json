@@ -4,5 +4,23 @@
     "@octokit/rest": "^22.0.1",
     "strip-ansi": "^7.2.0",
     "zx": "^8.8.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
+    "lint-staged": "^17.0.4",
+    "simple-git-hooks": "^2.13.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "deno run -A npm:lint-staged && deno task test",
+    "commit-msg": "deno run -A npm:commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*": "deno lint && deno fmt"
   }
 }

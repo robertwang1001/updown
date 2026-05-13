@@ -30,7 +30,7 @@ const configs: Configs = [
   vscodeSettings,
   vscodeExt,
   sigilPlugins,
-  iterm2
+  iterm2,
 ]
 
 export default configs
