@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/robertwang1001/updown/compare/v1.5.10...v1.6.0) (2026-05-14)
+
+
+### Features
+
+* support download && refactor code ([43e3ded](https://github.com/robertwang1001/updown/commit/43e3ded3ea9fc0c0a496da5c79c229c3a278ccf6))
+
+
+### Bug Fixes
+
+* **config:** add hint to virmrc ([e8f02d8](https://github.com/robertwang1001/updown/commit/e8f02d8b67dd8fed1cec1925c733aa45396dde72))
+
 ## [1.5.10](https://github.com/GloryWong/updown/compare/v1.5.9...v1.5.10) (2026-04-28)
 
 
