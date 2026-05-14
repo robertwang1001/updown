@@ -1,25 +1,26 @@
 import { Config } from '../types/configs.d.ts'
-import { fs, path } from 'zx'
-import { spinnerExec } from '../utils/spinnerExec.ts'
+import { path } from 'zx'
+import { createTargzipFileName, targzip, untarzip } from '../utils/targzip.ts'
+
+const fileName = 'nvim'
+const fileNameTz = createTargzipFileName(fileName)
 
 export default {
-  name: 'nvim.tar.gz',
-  getFilePath: ({ tmp }) => path.join(tmp, 'nvm-config.tar.gz'),
-  beforeUpload: async ({ home, filePath }) => {
-    const NVM_CONFIG_DIR = path.join(home, '.config/nvim')
-
-    if (!(await fs.pathExists(NVM_CONFIG_DIR))) {
-      throw new Error(`${NVM_CONFIG_DIR} does not exist`)
-    }
-
-    await spinnerExec(
-      'Archiving NeoVim config...',
-      'Failed to archive NeoVim config',
-      'NeoVim config archived successfully.',
-      ($) =>
-        $({
-          cwd: NVM_CONFIG_DIR,
-        })`tar --exclude-vcs -cf - . | gzip -nc > ${filePath}`,
-    )
+  name: fileNameTz,
+  getFilePath: ({ tmp }) => path.join(tmp, fileNameTz),
+  beforeUpload: ({ home, filePath }) => {
+    return targzip({
+      srcDir: path.join(home, '.config/nvim'),
+      filePath,
+      label: 'NeoVim config',
+      excludeVcs: true,
+    })
+  },
+  afterSetup: ({ home, filePath }) => {
+    return untarzip({
+      filePath,
+      destDir: path.join(home, '.config/nvim'),
+      label: 'NeoVim config',
+    })
   },
 } satisfies Config

@@ -1,27 +1,25 @@
-import { fs, path } from 'zx'
+import { path } from 'zx'
 import { Config } from '../types/configs.d.ts'
-import { spinnerExec } from '../utils/spinnerExec.ts'
+import { createTargzipFileName, targzip, untarzip } from '../utils/targzip.ts'
 
-const FILE_NAME = 'iterm2'
-const FILE_NAME_GZ = `${FILE_NAME}.gz`
+const fileName = 'iterm2'
+const fileNameTz = createTargzipFileName(fileName)
 
 export default {
-  name: FILE_NAME_GZ,
-  getFilePath: ({ tmp }) => path.join(tmp, FILE_NAME_GZ),
-  beforeUpload: async ({ tmp, filePath }) => {
-    const RAW_FILE_PATH = path.join(tmp, FILE_NAME)
-    if (!(await fs.pathExists(RAW_FILE_PATH))) {
-      throw new Error(`${RAW_FILE_PATH} does not exist`)
-    }
-
-    await spinnerExec(
-      `Archiving ${FILE_NAME}...`,
-      `Failed to archive ${FILE_NAME}`,
-      `${FILE_NAME} archived successfully.`,
-      ($) =>
-        $({
-          cwd: RAW_FILE_PATH,
-        })`tar -cf - . | gzip -nc > ${filePath}`,
-    )
+  name: fileNameTz,
+  getFilePath: ({ tmp }) => path.join(tmp, fileNameTz),
+  beforeUpload: ({ tmp, filePath }) => {
+    return targzip({
+      srcDir: path.join(tmp, fileName),
+      filePath,
+      label: fileName,
+    })
+  },
+  afterSetup: ({ tmp, filePath }) => {
+    return untarzip({
+      filePath,
+      destDir: path.join(tmp, fileName),
+      label: fileName,
+    })
   },
 } satisfies Config

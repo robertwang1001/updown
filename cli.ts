@@ -4,6 +4,9 @@ import { $, minimist, path } from 'zx'
 import { upload } from './upload.ts'
 import { setEnv } from './utils/envs.ts'
 import logger from './utils/logger.ts'
+import { download } from './download.ts'
+import { ROOT } from './constants.ts'
+import tildify from 'tildify'
 
 function showHelp() {
   logger.logKeep(`
@@ -13,11 +16,12 @@ Upload or download files to or from GitHub Gist
 
 Commands:
   upload                    Upload files to Github Gist
-  download                  Download files from Github Gist (Unsupported yet)
+  download                  Download files from Github Gist
 
 Options:
   --help, -h                Show this help message
   --version, -v             Show version
+  --root                    Show updown root directory
   --interactive, -i         Interaction mode. Enable prompts
   --force-upload            Upload without checking file change
   --gist-id                 Set gist id
@@ -41,11 +45,16 @@ async function showVersion() {
   }
 }
 
+function showRootDir() {
+  logger.logKeep(tildify(ROOT))
+}
+
 async function main() {
   const argv = minimist(Deno.args, {
     boolean: [
       'help',
       'version',
+      'root',
       'interactive',
       'force-upload',
       'reset-token',
@@ -85,8 +94,18 @@ async function main() {
     return
   }
 
+  if (argv['_'].includes('download')) {
+    await download()
+    return
+  }
+
   if (argv['version']) {
     await showVersion()
+    return
+  }
+
+  if (argv['root']) {
+    showRootDir()
     return
   }
 

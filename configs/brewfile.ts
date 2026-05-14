@@ -1,6 +1,7 @@
 import { Config } from '../types/configs.d.ts'
-import { os, path, which } from 'zx'
+import { chalk, os, path, which } from 'zx'
 import { spinnerExec } from '../utils/spinnerExec.ts'
+import tildify from 'tildify'
 
 export default {
   name: 'Brewfile',
@@ -26,7 +27,13 @@ export default {
       'Dumping Brewfile...',
       'Failed to dump Brewfile',
       `Brewfile successfully dumped at ${filePath}`,
-      ($) => $`brew bundle dump --force --file=${filePath}`,
+      ($) => $`brew bundle dump --no-upgrade --force --file=${filePath}`,
     )
   },
+  hint: ({ filePath }) =>
+    `You should manually run \`${
+      chalk.yellow(
+        `brew bundle install --no-upgrade --file=${tildify(filePath)}`,
+      )
+    }\` to install Homebrew packages`,
 } satisfies Config

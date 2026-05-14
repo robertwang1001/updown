@@ -32,7 +32,23 @@ interface BeforeUploadOptions extends CommonOptions {
   filePath: string
 }
 
+interface AfterSetupOptions extends CommonOptions {
+  /**
+   * The local file path
+   */
+  filePath: string
+}
+
+interface HintFnOptions extends CommonOptions {
+  /**
+   * The local file path
+   */
+  filePath: string
+}
+
 type BeforeUpload = (options: BeforeUploadOptions) => Promise<void> | void
+type AfterSetup = (options: AfterSetupOptions) => Promise<void> | void
+type HintFn = (options: HintFnOptions) => Promise<string> | string
 
 export interface Config {
   /**
@@ -47,6 +63,18 @@ export interface Config {
    * Hook: before upload
    */
   beforeUpload?: BeforeUpload
+  /**
+   * Hook: after setup for finishing download
+   */
+  afterSetup?: AfterSetup
+  /**
+   * Show a hint after finishing download
+   */
+  hint?: string | HintFn
+  /**
+   * Stop upload of this config temporarily
+   */
+  suspendedUpload?: boolean
 }
 
 export type Configs = Config[]

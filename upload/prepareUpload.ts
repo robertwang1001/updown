@@ -4,6 +4,7 @@ import { Configs } from '../types/configs.d.ts'
 import { verifyChecksum } from '../utils/verifyChecksum.ts'
 import { getEnv } from '../utils/envs.ts'
 import logger from '../utils/logger.ts'
+import tildify from 'tildify'
 
 async function validateFile(name: string, filePath: string) {
   const result: {
@@ -47,9 +48,16 @@ export async function prepareUpload(configs: Configs) {
     logger.log(chalk.yellow('Upload all files without checking their changes'))
   logger.log()
 
-  for (const { name, getFilePath, beforeUpload } of configs) {
+  for (
+    const { name, getFilePath, beforeUpload, suspendedUpload } of configs
+  ) {
     try {
-      logger.log(`[${name}]`)
+      logger.log(`[${chalk.bold(name)}]`)
+      if (suspendedUpload) {
+        logger.log(chalk.gray('Suspended.'))
+        logger.log()
+        continue
+      }
 
       const filePath = await getFilePath({
         root: ROOT,
@@ -68,7 +76,7 @@ export async function prepareUpload(configs: Configs) {
         })
       }
 
-      logger.log('Local file path:', filePath)
+      logger.log('Local file path:', tildify(filePath))
       const { valid, message, content, warn } = await spinner(
         'Validating file path...',
         () =>
