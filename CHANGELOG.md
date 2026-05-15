@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/robertwang1001/updown/compare/v1.6.0...v1.6.1) (2026-05-15)
+
+
+### Bug Fixes
+
+* **brewfile:** do not dump vscode extensions ([30f5c8b](https://github.com/robertwang1001/updown/commit/30f5c8b55583d62fd8e0a0d3c544ca59dc1cd65b))
+
 ## [1.6.0](https://github.com/robertwang1001/updown/compare/v1.5.10...v1.6.0) (2026-05-14)
 
 
