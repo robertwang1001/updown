@@ -27,7 +27,8 @@ export default {
       'Dumping Brewfile...',
       'Failed to dump Brewfile',
       `Brewfile successfully dumped at ${filePath}`,
-      ($) => $`brew bundle dump --no-upgrade --force --file=${filePath}`,
+      ($) =>
+        $`brew bundle dump --no-vscode --no-upgrade --force --file=${filePath}`,
     )
   },
   hint: ({ filePath }) =>
