@@ -18,3 +18,5 @@ export const ENV_SCHEME = {
   UPDOWN_QUIET: Boolean,
   UPDOWN_NOTIFY: Boolean,
 } as const
+
+export const DOWNLOAD_EXCLUDE = ['Readme.md']

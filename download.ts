@@ -19,10 +19,7 @@ export async function download() {
     const token = await readGithubToken()
     logger.log()
 
-    // Download
     const files = await toDownload(gistId, token)
-    logger.log()
-
     await finishDownload(files, configs)
 
     logger.log('Done!')

@@ -4,6 +4,7 @@ import { writeGistId } from '../utils/writeGistId.ts'
 import { writeGithubToken } from '../utils/writeGithubToken.ts'
 import { retry as retryPlugin } from '@octokit/plugin-retry'
 import logger from '../utils/logger.ts'
+import { DOWNLOAD_EXCLUDE } from '../constants.ts'
 
 export async function toDownload(
   gistId: string,
@@ -54,7 +55,9 @@ export async function toDownload(
     const files = await spinner('Downloading files...', async () => {
       const promises = Object.entries(gistFiles ?? {}).map(
         async ([name, data]) => {
+          if (DOWNLOAD_EXCLUDE.includes(name)) return
           if (!data?.raw_url) return
+
           const rsp = await fetch(data?.raw_url)
           if (!rsp.ok) {
             return {
