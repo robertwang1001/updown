@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/robertwang1001/updown/compare/v1.7.0...v1.7.1) (2026-05-16)
+
+
+### Bug Fixes
+
+* **config:** add kilo-settings.json ([14db736](https://github.com/robertwang1001/updown/commit/14db7365624c826a640734e5ec87ae8fad7a1bad))
+
 ## [1.7.0](https://github.com/robertwang1001/updown/compare/v1.6.1...v1.7.0) (2026-05-16)
 
 
