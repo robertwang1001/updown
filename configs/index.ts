@@ -3,6 +3,7 @@ import brewfile from './brewfile.ts'
 import clashVergeRevConfig from './clash-verge-rev-config.ts'
 import gitconfig from './gitconfig.ts'
 import iterm2 from './iterm2.ts'
+import kiloSettings from './kilo-settings.ts'
 import npmrc from './npmrc.ts'
 import nvim from './nvim.ts'
 import pnpmGlobalPkgJson from './pnpm-global-pkg-json.ts'
@@ -31,6 +32,7 @@ const configs: Configs = [
   vscodeExt,
   sigilPlugins,
   iterm2,
+  kiloSettings,
 ]
 
 export default configs
