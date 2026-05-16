@@ -24,6 +24,7 @@ Options:
   --root                    Show updown root directory
   --interactive, -i         Interaction mode. Enable prompts
   --force-upload            Upload without checking file change
+  --skip-setup              Download only and skip set up
   --gist-id                 Set gist id
   --reset-token             Reset token. Must be used together with --interactive to set a new token
   --quiet                   Quiet mode. Suppress unimportant output
@@ -57,6 +58,7 @@ async function main() {
       'root',
       'interactive',
       'force-upload',
+      'skip-setup',
       'reset-token',
       'quiet',
       'notify',
@@ -74,6 +76,9 @@ async function main() {
   }
   if (argv['force-upload']) {
     setEnv('UPDOWN_UPLOAD_FORCE', true)
+  }
+  if (argv['skip-setup']) {
+    setEnv('UPDOWN_SKIP_SETUP', true)
   }
   if (argv['gist-id']) {
     setEnv('UPDOWN_GIST_ID', argv['gist-id'])

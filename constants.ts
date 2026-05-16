@@ -11,6 +11,7 @@ export const CHECKSUMS_FILE = path.join(ROOT, 'checksums.json')
 
 export const ENV_SCHEME = {
   UPDOWN_UPLOAD_FORCE: Boolean,
+  UPDOWN_SKIP_SETUP: Boolean,
   UPDOWN_INTERACTIVE: Boolean,
   UPDOWN_GIST_ID: String,
   UPDOWN_RESET_TOKEN: Boolean,

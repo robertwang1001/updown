@@ -18,7 +18,7 @@ export async function finishDownload(
   const home = os.homedir()
   const interactive = !!getEnv('UPDOWN_INTERACTIVE')
 
-  // Write to a temporary location
+  // Write to a __download__
   const promiseSettledResult = await spinner(
     'Writting downloaded...',
     () =>
@@ -49,6 +49,16 @@ export async function finishDownload(
   failureReasons.forEach((v) => logger.error(v))
   logger.log()
 
+  if (getEnv('UPDOWN_SKIP_SETUP')) {
+    logger.log(
+      'Skip setup. All files are downloaded to',
+      tildify(DOWNLOADED_PATH),
+    )
+    logger.log()
+    return
+  }
+
+  // Set up
   const { fileNames: selectedFileNames } = await prompts({
     type: 'multiselect',
     name: 'fileNames',
