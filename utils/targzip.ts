@@ -23,7 +23,7 @@ export async function targzip(
   { srcDir, filePath, label, excludeVcs, included }: TargzipOptions,
 ) {
   if (!(await fs.pathExists(srcDir))) {
-    throw new Error(`${srcDir} does not exist`)
+    throw new Error(`${tildify(srcDir)} does not exist`)
   }
 
   const args: string[] = []
