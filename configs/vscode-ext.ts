@@ -13,6 +13,7 @@ export default {
       `Dumped to ${filePath}`,
       () => $`code --list-extensions > ${filePath}`,
     )
+    return true
   },
   hint: ({ filePath }) =>
     `You should manually run \`${

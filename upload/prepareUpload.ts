@@ -67,13 +67,17 @@ export async function prepareUpload(configs: Configs) {
       })
 
       if (beforeUpload) {
-        await beforeUpload({
-          root: ROOT,
-          home,
-          tmp: TMP_PATH,
-          interactive,
-          filePath,
-        })
+        if (
+          !(await beforeUpload({
+            root: ROOT,
+            home,
+            tmp: TMP_PATH,
+            interactive,
+            filePath,
+          }))
+        ) {
+          logger.log('Skip it!')
+        }
       }
 
       logger.log('Local file path:', tildify(filePath))

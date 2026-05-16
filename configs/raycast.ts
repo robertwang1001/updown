@@ -14,6 +14,7 @@ export default {
       filePath,
       nameRegExp: /^Raycast.*\.rayconfig$/,
     })
+    return true
   },
   hint: ({ filePath }) =>
     `You should manually import \`${

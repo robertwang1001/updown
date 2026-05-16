@@ -2,6 +2,7 @@ import { fs } from 'zx'
 import { spinnerExec } from './spinnerExec.ts'
 import { Buffer } from 'node:buffer'
 import tildify from 'tildify'
+import logger from './logger.ts'
 
 export function createTargzipFileName(fileName: string) {
   return `${fileName}.tar.gz.base64`
@@ -19,11 +20,15 @@ interface TargzipOptions {
   label: string
 }
 
+/**
+ * returning `false` means failure
+ */
 export async function targzip(
   { srcDir, filePath, label, excludeVcs, included }: TargzipOptions,
-) {
+): Promise<boolean> {
   if (!(await fs.pathExists(srcDir))) {
-    throw new Error(`${tildify(srcDir)} does not exist`)
+    logger.log(`${tildify(srcDir)} does not exist`)
+    return false
   }
 
   const args: string[] = []
@@ -55,6 +60,8 @@ export async function targzip(
   const buff = await fs.readFile(filePath)
   const b64 = buff.toBase64()
   await fs.writeFile(filePath, b64)
+
+  return true
 }
 
 interface UntargzipOptions {

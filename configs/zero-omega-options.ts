@@ -14,6 +14,7 @@ export default {
       filePath,
       nameRegExp: /^ZeroOmegaOptions.*\.bak$/,
     })
+    return true
   },
   hint: ({ filePath }) =>
     `You should manually import \`${

@@ -2,13 +2,15 @@ import { Config } from '../types/configs.d.ts'
 import { chalk, os, path, which } from 'zx'
 import { spinnerExec } from '../utils/spinnerExec.ts'
 import tildify from 'tildify'
+import logger from '../utils/logger.ts'
 
 export default {
   name: 'Brewfile',
   getFilePath: ({ tmp }) => path.join(tmp, 'Brewfile'),
   beforeUpload: async ({ filePath }) => {
     if (os.platform() === 'win32') {
-      throw new Error(`Unsupported platform ${os.platform()}`)
+      logger.log(`Unsupported platform ${os.platform()}`)
+      return false
     }
 
     const brew = await which('brew', { nothrow: true })
@@ -30,6 +32,8 @@ export default {
       ($) =>
         $`brew bundle dump --no-vscode --no-upgrade --force --file=${filePath}`,
     )
+
+    return true
   },
   hint: ({ filePath }) =>
     `You should manually run \`${

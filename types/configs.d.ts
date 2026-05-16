@@ -46,10 +46,6 @@ interface HintFnOptions extends CommonOptions {
   filePath: string
 }
 
-type BeforeUpload = (options: BeforeUploadOptions) => Promise<void> | void
-type AfterSetup = (options: AfterSetupOptions) => Promise<void> | void
-type HintFn = (options: HintFnOptions) => Promise<string> | string
-
 export interface Config {
   /**
    * Unique file name in gist
@@ -60,17 +56,18 @@ export interface Config {
    */
   getFilePath: GetFilePath
   /**
-   * Hook: before upload
+   * Hook: before upload.
+   * Return `false` to skip upload
    */
-  beforeUpload?: BeforeUpload
+  beforeUpload?: (options: BeforeUploadOptions) => Promise<boolean> | boolean
   /**
    * Hook: after setup for finishing download
    */
-  afterSetup?: AfterSetup
+  afterSetup?: (options: AfterSetupOptions) => Promise<void> | void
   /**
    * Show a hint after finishing download
    */
-  hint?: string | HintFn
+  hint?: string | ((options: HintFnOptions) => Promise<string> | string)
   /**
    * Stop upload of this config temporarily
    */
