@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.7.0](https://github.com/robertwang1001/updown/compare/v1.6.1...v1.7.0) (2026-05-16)
+
+
+### Features
+
+* support skipping setup after download ([ed4ce21](https://github.com/robertwang1001/updown/commit/ed4ce21279334370ee76892f713918957dc32655))
+
+
+### Bug Fixes
+
+* beforeUpload can skip following upload ([82d9412](https://github.com/robertwang1001/updown/commit/82d941265229d9fe88c576b6dfc1c1c08009c555))
+* **download:** exclude Readme.md ([60d8f8d](https://github.com/robertwang1001/updown/commit/60d8f8dd6f188dc2b308e44ea17ea3c2c8c60800))
+* handle duplicate local files ([b70a107](https://github.com/robertwang1001/updown/commit/b70a107755ad8678681706efbdad94ca807897ab))
+
 ## [1.6.1](https://github.com/robertwang1001/updown/compare/v1.6.0...v1.6.1) (2026-05-15)
 
 
