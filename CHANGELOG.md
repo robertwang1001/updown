@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/robertwang1001/updown/compare/v1.7.1...v1.7.2) (2026-05-18)
+
+
+### Bug Fixes
+
+* **config:** add vscode globalStorage ([097f3ba](https://github.com/robertwang1001/updown/commit/097f3bae23b19387153a63bfcce5a5455e81b843))
+
 ## [1.7.1](https://github.com/robertwang1001/updown/compare/v1.7.0...v1.7.1) (2026-05-16)
 
 
