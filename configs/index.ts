@@ -12,6 +12,7 @@ import sigilPlugins from './sigil-plugins.ts'
 import tabbyConfig from './tabby-config.ts'
 import vimrc from './vimrc.ts'
 import vscodeExt from './vscode-ext.ts'
+import vscodeGlobalStorage from './vscode-global-storage.ts'
 import vscodeSettings from './vscode-settings.ts'
 import zeroOmegaOptions from './zero-omega-options.ts'
 import zshrc from './zshrc.ts'
@@ -33,6 +34,7 @@ const configs: Configs = [
   sigilPlugins,
   iterm2,
   kiloSettings,
+  vscodeGlobalStorage,
 ]
 
 export default configs
