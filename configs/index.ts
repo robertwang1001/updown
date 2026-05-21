@@ -1,6 +1,7 @@
 import { Configs } from '../types/configs.d.ts'
 import brewfile from './brewfile.ts'
 import clashVergeRevConfig from './clash-verge-rev-config.ts'
+import continueConfigs from './continue-configs.ts'
 import gitconfig from './gitconfig.ts'
 import iterm2 from './iterm2.ts'
 import kiloSettings from './kilo-settings.ts'
@@ -35,6 +36,7 @@ const configs: Configs = [
   iterm2,
   kiloSettings,
   vscodeGlobalStorage,
+  continueConfigs,
 ]
 
 export default configs
