@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/robertwang1001/updown/compare/v1.7.2...v1.7.3) (2026-05-22)
+
+
+### Bug Fixes
+
+* add vscode extension continue configs ([56c913c](https://github.com/robertwang1001/updown/commit/56c913c75fd94daf34500f12cb990a2229485bf0))
+
 ## [1.7.2](https://github.com/robertwang1001/updown/compare/v1.7.1...v1.7.2) (2026-05-18)
 
 
