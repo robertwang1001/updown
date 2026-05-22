@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.4](https://github.com/robertwang1001/updown/compare/v1.7.3...v1.7.4) (2026-05-22)
+
+
+### Bug Fixes
+
+* **brew:** remove `no-upgrade` of dumping ([ce70b5f](https://github.com/robertwang1001/updown/commit/ce70b5f37b93568e844d59b2d5e9c430075ad487))
+
 ## [1.7.3](https://github.com/robertwang1001/updown/compare/v1.7.2...v1.7.3) (2026-05-22)
 
 
