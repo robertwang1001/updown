@@ -10,8 +10,8 @@
     "zx": "^8.8.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.1.0",
-    "@commitlint/config-conventional": "^21.1.0",
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "@types/fs-extra": "^11.0.4",
     "@types/prompts": "^2.4.9",
     "lint-staged": "^17.0.8",
