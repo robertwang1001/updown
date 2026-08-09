@@ -5,13 +5,13 @@
     "jsr:@std/internal@^1.0.12": "1.0.13",
     "npm:@commitlint/cli@^21.2.1": "21.2.1_@types+node@22.12.0_typescript@7.0.2",
     "npm:@commitlint/config-conventional@^21.2.0": "21.2.0",
-    "npm:@octokit/plugin-retry@^8.1.0": "8.1.0_@octokit+core@7.0.6",
+    "npm:@octokit/plugin-retry@^8.1.1": "8.1.1_@octokit+core@7.0.7",
     "npm:@octokit/rest@^22.0.1": "22.0.1_@octokit+core@7.0.6",
     "npm:@types/fs-extra@^11.0.4": "11.0.4",
     "npm:@types/node@*": "22.12.0",
     "npm:@types/prompts@^2.4.9": "2.4.9",
     "npm:iso-timestamp@^1.2.0": "1.2.0",
-    "npm:lint-staged@^17.2.0": "17.2.0",
+    "npm:lint-staged@^17.3.0": "17.3.0",
     "npm:prompts@^2.4.2": "2.4.2",
     "npm:simple-git-hooks@^2.13.1": "2.13.1",
     "npm:strip-ansi@^7.2.0": "7.2.0",
@@ -203,78 +203,77 @@
     "@octokit/auth-token@6.0.0": {
       "integrity": "sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w=="
     },
-    "@octokit/core@7.0.6": {
-      "integrity": "sha512-DhGl4xMVFGVIyMwswXeyzdL4uXD5OGILGX5N8Y+f6W7LhC1Ze2poSNrkF/fedpVDHEEZ+PHFW0vL14I+mm8K3Q==",
+    "@octokit/core@7.0.7": {
+      "integrity": "sha512-DcB0M3KFgr9ECI328lhBMVsyFT2DnmNucSBTqEN3exyNKUzkkpUSCHmTRcunF41Eou2TIQKW4seewri8ON9bSA==",
       "dependencies": [
         "@octokit/auth-token",
         "@octokit/graphql",
         "@octokit/request",
         "@octokit/request-error",
-        "@octokit/types",
+        "@octokit/types@17.0.0",
         "before-after-hook",
         "universal-user-agent"
       ]
     },
-    "@octokit/endpoint@11.0.2": {
-      "integrity": "sha512-4zCpzP1fWc7QlqunZ5bSEjxc6yLAlRTnDwKtgXfcI/FxxGoqedDG8V2+xJ60bV2kODqcGB+nATdtap/XYq2NZQ==",
+    "@octokit/endpoint@11.0.4": {
+      "integrity": "sha512-f1cOWoHPmxryJFknxbtDdjODWfV8A9tc8Aae6ermXPNgHFZ/x91AtHIz4gicEjL8hkJiip+u21QHJORfBv/qiA==",
       "dependencies": [
-        "@octokit/types",
+        "@octokit/types@17.0.0",
         "universal-user-agent"
       ]
     },
-    "@octokit/graphql@9.0.3": {
-      "integrity": "sha512-grAEuupr/C1rALFnXTv6ZQhFuL1D8G5y8CN04RgrO4FIPMrtm+mcZzFG7dcBm+nq+1ppNixu+Jd78aeJOYxlGA==",
+    "@octokit/graphql@9.0.4": {
+      "integrity": "sha512-5s15CCiY8XXQ+FG+b1YQcl6Z2FA++nwAz/tg2VUrTmnMncP+2nnGUEYANImdnxsA2Fnq+Mbl7hDjUTw7cFAwcg==",
       "dependencies": [
         "@octokit/request",
-        "@octokit/types",
+        "@octokit/types@17.0.0",
         "universal-user-agent"
       ]
     },
     "@octokit/openapi-types@27.0.0": {
       "integrity": "sha512-whrdktVs1h6gtR+09+QsNk2+FO+49j6ga1c55YZudfEG+oKJVvJLQi3zkOm5JjiUXAagWK2tI2kTGKJ2Ys7MGA=="
     },
+    "@octokit/openapi-types@28.0.0": {
+      "integrity": "sha512-0rFyLuyHvIj6uuZWuDslxkowFYdPXoNIkeAv4b27dzm2Tf4vGWXnPsMcxs7d65kLdMERgP3wc1AEPlqMz8e1cQ=="
+    },
     "@octokit/plugin-paginate-rest@14.0.0_@octokit+core@7.0.6": {
       "integrity": "sha512-fNVRE7ufJiAA3XUrha2omTA39M6IXIc6GIZLvlbsm8QOQCYvpq/LkMNGyFlB1d8hTDzsAXa3OKtybdMAYsV/fw==",
       "dependencies": [
-        "@octokit/core",
-        "@octokit/types"
+        "@octokit/types@16.0.0"
       ]
     },
     "@octokit/plugin-request-log@6.0.0_@octokit+core@7.0.6": {
-      "integrity": "sha512-UkOzeEN3W91/eBq9sPZNQ7sUBvYCqYbrrD8gTbBuGtHEuycE4/awMXcYvx6sVYo7LypPhmQwwpUe4Yyu4QZN5Q==",
-      "dependencies": [
-        "@octokit/core"
-      ]
+      "integrity": "sha512-UkOzeEN3W91/eBq9sPZNQ7sUBvYCqYbrrD8gTbBuGtHEuycE4/awMXcYvx6sVYo7LypPhmQwwpUe4Yyu4QZN5Q=="
     },
     "@octokit/plugin-rest-endpoint-methods@17.0.0_@octokit+core@7.0.6": {
       "integrity": "sha512-B5yCyIlOJFPqUUeiD0cnBJwWJO8lkJs5d8+ze9QDP6SvfiXSz1BF+91+0MeI1d2yxgOhU/O+CvtiZ9jSkHhFAw==",
       "dependencies": [
-        "@octokit/core",
-        "@octokit/types"
+        "@octokit/types@16.0.0"
       ]
     },
-    "@octokit/plugin-retry@8.1.0_@octokit+core@7.0.6": {
-      "integrity": "sha512-O1FZgXeiGb2sowEr/hYTr6YunGdSAFWnr2fyW39Ah85H8O33ELASQxcvOFF5LE6Tjekcyu2ms4qAzJVhSaJxTw==",
+    "@octokit/plugin-retry@8.1.1_@octokit+core@7.0.7": {
+      "integrity": "sha512-VCVvZ/R1+u3WuiBWpNavZ0mY4aaJNAsENrpBP9aLSR2QyOpQgd7DhM5j4AW7z4MQpnJYgwBPf0XqPQoNBRdQwg==",
       "dependencies": [
         "@octokit/core",
         "@octokit/request-error",
-        "@octokit/types",
+        "@octokit/types@17.0.0",
         "bottleneck"
       ]
     },
-    "@octokit/request-error@7.0.2": {
-      "integrity": "sha512-U8piOROoQQUyExw5c6dTkU3GKxts5/ERRThIauNL7yaRoeXW0q/5bgHWT7JfWBw1UyrbK8ERId2wVkcB32n0uQ==",
+    "@octokit/request-error@7.1.1": {
+      "integrity": "sha512-+eaY7G2VVpSf2pc5Gn1+mph837V/d/TYTJAgWL9Tb0ogGYcpN3IlAVFgjL+Vv93F/sevrxkvsYCedtpLdcFLzA==",
       "dependencies": [
-        "@octokit/types"
+        "@octokit/types@17.0.0"
       ]
     },
-    "@octokit/request@10.0.6": {
-      "integrity": "sha512-FO+UgZCUu+pPnZAR+iKdUt64kPE7QW7ciqpldaMXaNzixz5Jld8dJ31LAUewk0cfSRkNSRKyqG438ba9c/qDlQ==",
+    "@octokit/request@10.0.13": {
+      "integrity": "sha512-v2269YxL9Yf+x3d+gRI63FP0vFQEiWgLyBzxe/Y+0yFDg2B/Tzf5dhh9VNfccVAQnfcfwQWyk/y6Bn7rUXXs7A==",
       "dependencies": [
         "@octokit/endpoint",
         "@octokit/request-error",
-        "@octokit/types",
-        "fast-content-type-parse",
+        "@octokit/types@17.0.0",
+        "content-type",
+        "json-with-bigint",
         "universal-user-agent"
       ]
     },
@@ -290,7 +289,13 @@
     "@octokit/types@16.0.0": {
       "integrity": "sha512-sKq+9r1Mm4efXW1FCk7hFSeJo4QKreL/tTbR0rz/qx/r1Oa2VV83LTA/H/MuCOX7uCIJmQVRKBcbmWoySjAnSg==",
       "dependencies": [
-        "@octokit/openapi-types"
+        "@octokit/openapi-types@27.0.0"
+      ]
+    },
+    "@octokit/types@17.0.0": {
+      "integrity": "sha512-ByP1v7YL5SMveFPP7+sj0/ZuWCOOg/Chs4NafOMpq6WNIM/hdGY0S7C0TCGDBWu1aGmOxmUIhMx3cO+IdwYZ1Q==",
+      "dependencies": [
+        "@octokit/openapi-types@28.0.0"
       ]
     },
     "@simple-libs/child-process-utils@2.0.0": {
@@ -487,6 +492,9 @@
         "wrap-ansi"
       ]
     },
+    "content-type@2.0.0": {
+      "integrity": "sha512-j/O/d7GcZCyNl7/hwZAb606rzqkyvaDctLmckbxLzHvFBzTJHuGEdodATcP3yIRoDrLHkIATJuvzbFlp/ki2cQ=="
+    },
     "conventional-changelog-angular@9.2.1": {
       "integrity": "sha512-oWSL6ZhnXbYraOFTK3PgRAQJ8fADDAEv5K6AdeyQPLvjFmhG8+ejL0jZZp/R7vTmGJaBvZEE+sE7dB4bCv7sAw==",
       "dependencies": [
@@ -574,9 +582,6 @@
         "signal-exit",
         "strip-final-newline"
       ]
-    },
-    "fast-content-type-parse@3.0.0": {
-      "integrity": "sha512-ZvLdcY8P+N8mGQJahJV5G4U88CSvT1rP8ApL6uETe88MBXrBHAkZlSEySdUlyztF7ccb+Znos3TFqaepHxdhBg=="
     },
     "fast-deep-equal@3.1.3": {
       "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
@@ -721,14 +726,17 @@
     "json-schema-traverse@1.0.0": {
       "integrity": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug=="
     },
+    "json-with-bigint@3.5.10": {
+      "integrity": "sha512-Vcx+JVNEBts/xfcoCS69sKrOhOk/3TVlvlT+XzUOefVKnnrbYSCKpDCm10pohsJFtsJVYnwa/cXRZ4eElzaM6w=="
+    },
     "kleur@3.0.3": {
       "integrity": "sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w=="
     },
     "lines-and-columns@1.2.4": {
       "integrity": "sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg=="
     },
-    "lint-staged@17.2.0": {
-      "integrity": "sha512-FchGnFe4i4B1C/a35SPU9bNGPEHSC1+1iV0plLjzBmKVe9klZrlRfSgK6Cw4VeHyqOXbJUXP0vON61uRftNQ0A==",
+    "lint-staged@17.3.0": {
+      "integrity": "sha512-woZS3vNe3UKqBaLPvbLOtKRY4tLANpWQhom12MGWqC8Mh1lCOO+WgSwmX2amjJAqTY9BkXYW87fCUH5H9Ph6xw==",
       "dependencies": [
         "picomatch@4.0.5",
         "string-argv",
@@ -1064,12 +1072,12 @@
       "dependencies": [
         "npm:@commitlint/cli@^21.2.1",
         "npm:@commitlint/config-conventional@^21.2.0",
-        "npm:@octokit/plugin-retry@^8.1.0",
+        "npm:@octokit/plugin-retry@^8.1.1",
         "npm:@octokit/rest@^22.0.1",
         "npm:@types/fs-extra@^11.0.4",
         "npm:@types/prompts@^2.4.9",
         "npm:iso-timestamp@^1.2.0",
-        "npm:lint-staged@^17.2.0",
+        "npm:lint-staged@^17.3.0",
         "npm:prompts@^2.4.2",
         "npm:simple-git-hooks@^2.13.1",
         "npm:strip-ansi@^7.2.0",

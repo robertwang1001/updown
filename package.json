@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@octokit/plugin-retry": "^8.1.0",
+    "@octokit/plugin-retry": "^8.1.1",
     "@octokit/rest": "^22.0.1",
     "iso-timestamp": "^1.2.0",
     "prompts": "^2.4.2",
@@ -14,7 +14,7 @@
     "@commitlint/config-conventional": "^21.2.0",
     "@types/fs-extra": "^11.0.4",
     "@types/prompts": "^2.4.9",
-    "lint-staged": "^17.2.0",
+    "lint-staged": "^17.3.0",
     "simple-git-hooks": "^2.13.1"
   },
   "commitlint": {
