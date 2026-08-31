@@ -10,7 +10,7 @@
     "npm:@types/fs-extra@^11.0.4": "11.0.4",
     "npm:@types/node@*": "22.12.0",
     "npm:@types/prompts@^2.4.9": "2.4.9",
-    "npm:iso-timestamp@^1.2.0": "1.2.0",
+    "npm:iso-timestamp@2": "2.0.0",
     "npm:lint-staged@^17.4.1": "17.4.1",
     "npm:prompts@^2.4.2": "2.4.2",
     "npm:simple-git-hooks@^2.13.1": "2.13.1",
@@ -706,8 +706,8 @@
     "isexe@2.0.0": {
       "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
     },
-    "iso-timestamp@1.2.0": {
-      "integrity": "sha512-xgpwQArBHkpI2X5fa6jHPMd8/S+pYBgOO/TdHDaK7MxLSCuHCtg9R9tDbgiFuNKnUz3I54km4GKn5fYAbLFC5g=="
+    "iso-timestamp@2.0.0": {
+      "integrity": "sha512-PwsSQHxtrtOa7vdQtwgv4JMhkqqaPUxatWBayOiuGtfMukq/vBTNRy0NALrGkW15Rcfc4G3eem6rJtPaHyQbmg=="
     },
     "jiti@2.6.1": {
       "integrity": "sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==",
@@ -1083,7 +1083,7 @@
         "npm:@octokit/rest@^22.0.1",
         "npm:@types/fs-extra@^11.0.4",
         "npm:@types/prompts@^2.4.9",
-        "npm:iso-timestamp@^1.2.0",
+        "npm:iso-timestamp@2",
         "npm:lint-staged@^17.4.1",
         "npm:prompts@^2.4.2",
         "npm:simple-git-hooks@^2.13.1",
