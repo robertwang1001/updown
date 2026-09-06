@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.5](https://github.com/robertwang1001/updown/compare/v1.7.4...v1.7.5) (2026-09-06)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#88](https://github.com/robertwang1001/updown/issues/88)) ([b02d663](https://github.com/robertwang1001/updown/commit/b02d663942f9af5f9aa20cec2e88002959abf8d6))
+
 ## [1.7.4](https://github.com/robertwang1001/updown/compare/v1.7.3...v1.7.4) (2026-05-22)
 
 
