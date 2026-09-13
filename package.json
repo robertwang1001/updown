@@ -2,7 +2,7 @@
   "dependencies": {
     "@octokit/plugin-retry": "^8.1.1",
     "@octokit/rest": "^22.0.1",
-    "iso-timestamp": "^1.2.0",
+    "iso-timestamp": "^2.0.0",
     "prompts": "^2.4.2",
     "strip-ansi": "^7.2.0",
     "tildify": "^3.0.0",
